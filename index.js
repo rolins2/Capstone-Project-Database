@@ -7,6 +7,13 @@ const app = express();
 
 const port = 3000;
 
+const books = [ {title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5}  ,
+{title: "The Subtle art of not giving a fuck", isbn_code : 87555 ,dte : new Date("2024-05-25"), rating: 7},
+{title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5}    
+
+
+]
+
 const url = "https://covers.openlibrary.org/b/isbn/0385472579-S.jpg";
 app.use(bodyParser.urlencoded({ extended: true }));
 
