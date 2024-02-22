@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // 6C5F5B grey
 //F6F1EE white
 app.get("/",(req,res)=>{
-    res.render("index.ejs");
+    res.render("index.ejs",{books});
 })
 
 app.listen(port,()=>{
