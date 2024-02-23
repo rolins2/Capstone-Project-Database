@@ -9,7 +9,7 @@ const port = 3000;
 
 const books = [ {title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5}  ,
 {title: "The Subtle art of not giving a fuck", isbn_code : 87555 ,dte : new Date("2024-05-25"), rating: 7},
-{title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5}    
+{title: "Atomic habits 2", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5}    
 
 
 ]

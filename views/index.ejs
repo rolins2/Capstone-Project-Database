@@ -26,8 +26,15 @@
       
       <div>
         <ul>
-          <%= books %>
-          
+
+          <%  for(let i =0; i< books.length ; i++ ){%>
+
+              <li>
+                <%= books[i].title %>
+
+
+              </li>
+              <% } %>
           
           <li> Hello</li>
           <li> this is anothe rbook</li>
