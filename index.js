@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { response } from 'express';
 import pg from 'pg';
 import  bodyParser from 'body-parser';
 import axios from 'axios';
@@ -9,7 +9,7 @@ const port = 3000;
 
 const books = [ {title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5,urls : "https://covers.openlibrary.org/b/isbn/0385472579-S.jpg"}  ,
 {title: "The Subtle art of not giving a fuck", isbn_code : 87555 ,dte : new Date("2024-05-25"), rating: 7, urls : "https://covers.openlibrary.org/b/isbn/0735211299-S.jpg"},
-{title: "Atomic habits 2", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5, urls : "https://covers.openlibrary.org/b/isbn/0062641549-S.jpg"}    
+{title: "Atomic habits 2", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5, urls : "https://covers.openlibrary.org/b/isbn/0062641549-Sx.jpg"}    
 
 
 ]
@@ -20,7 +20,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //ED7D31 brown
 // 6C5F5B grey
 //F6F1EE white
-app.get("/",(req,res)=>{
+app.get("/",async (req,res)=>{
+
+    try{
+
+            // const response = await axios.get(Apiurl);
+            
+            // console.log(response.data);
+    }catch(err){
+
+        console.log(err);
+
+    }
     res.render("index.ejs",{books});
 })
 
