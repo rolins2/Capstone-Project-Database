@@ -17,6 +17,16 @@ const books = [ {title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022
 const Apiurl = "https://covers.openlibrary.org/b/isbn/0385472579-S.jpg";
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const db = new pg.Client({
+    user : "postgres",
+    host: "localhost",
+    database : "bookrec",
+    password: "r8FbTfBr",
+    port: 5432,
+});
+
+db.connect();
+
 //ED7D31 brown
 // 6C5F5B grey
 //F6F1EE white
