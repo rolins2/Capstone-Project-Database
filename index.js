@@ -34,6 +34,10 @@ app.get("/",async (req,res)=>{
 
     try{
 
+
+        let result = await db.query("SELECT * FROM ")
+
+        console.log("the result is " +result.rows);
             // const response = await axios.get(Apiurl);
             
             // console.log(response.data);
