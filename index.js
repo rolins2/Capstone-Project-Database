@@ -42,12 +42,12 @@ app.get("/",async (req,res)=>{
 
         console.log(typeof(result.rows));
 
-         dbs = result.rows;
+          books = result.rows;
             // const response = await axios.get(Apiurl);
 
-            for(let i =0;i < dbs.length;i++){
-                console.log(result.rows[i].title);
-            }
+            // for(let i =0;i < dbs.length;i++){
+            //     console.log(result.rows[i].title);
+            // }
             
             // console.log(response.data);
     }catch(err){
