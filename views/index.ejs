@@ -41,7 +41,12 @@
               <li>
                 <%= books[i].title %>
 
-                <img src = " <%= books[i].urls %>" />
+                <img src = "https://covers.openlibrary.org/b/isbn/<%= books[i].isbn%>-S.jpg" />
+
+                <h3> Ratings  <%= books[i].rating %></h3>
+
+                <h3> Date <%= books[i].readdate %></h3>
+
 
 
               </li>
