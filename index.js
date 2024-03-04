@@ -38,9 +38,7 @@ app.get("/",async (req,res)=>{
 
         let result = await db.query("SELECT * FROM books")
 
-        console.log("the result is " +result.rows[0]);
-
-        console.log(typeof(result.rows));
+     
 
           books = result.rows;
             // const response = await axios.get(Apiurl);
