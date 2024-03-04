@@ -42,16 +42,16 @@
 
 
 
-                <div class="card mb-3" style="max-height: 25rem;">
-                  <div class="row g-0">
-                    <div class="col-md-1">
-                      <img src = "https://covers.openlibrary.org/b/isbn/<%= books[i].isbn%>-M.jpg" class="img-fluid rounded-start"/>
+                <div class="card mb-3 "  >
+                  <div class="row g-0 ">
+                    <div class="col-md-3 ">
+                      <img src = "https://covers.openlibrary.org/b/isbn/<%= books[i].isbn%>-L.jpg" class="img-fluid rounded-start"/>
 
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
                         <h2 class="card-title"><%= books[i].title %> </h2>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><%= books[i].reviews%></p>
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                       </div>
                     </div>
