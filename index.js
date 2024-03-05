@@ -30,6 +30,13 @@ db.connect();
 //ED7D31 brown
 // 6C5F5B grey
 //F6F1EE white
+
+
+
+app.get("/addBook", (req,res)=>{
+    res.render("addBook.ejs");
+})
+
 app.get("/",async (req,res)=>{
     let books = [];
 
