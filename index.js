@@ -4,6 +4,8 @@ import  bodyParser from 'body-parser';
 import axios from 'axios';
 
 const app = express();
+app.use(express.static("public"));
+
 
 const port = 3000;
 
@@ -32,6 +34,9 @@ db.connect();
 //F6F1EE white
 
 
+app.post("/addBooks",(req,res)=>{
+    console.log(req.body);
+})
 
 app.get("/addBook", (req,res)=>{
     res.render("addBook.ejs");

@@ -1,58 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add book </title>
-</head>
-<body>
+<%- include('partials/header.ejs'); -%>
+
 
     <h2> This page is to add a book </h2>
 
     <div class = "container">
 
-        <form class="row g-3">
+        <form class="row g-3" method="post" action = "/addBooks">
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Book Name</label>
-              <input type="text" class="form-control" id="inputEmail4" required>
+              <label for="inputBName" class="form-label">Book Name</label>
+              <input type="text" class="form-control" id="inputBName" name = "bName" required>
             </div>
             <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">ISBN Number</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <label for="isbnNum" class="form-label">ISBN 10 Number</label>
+              <input type="number" class="form-control" name = "bIsbn" id="isbnNum" minlength="10"  maxlength="10">
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Ratings Out Of 5</label>
-              <input type="number" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <input type="number" name = "bRating" class="form-control" id="inputRating" placeholder="Rate from 1 - 5 "  min="1" max="5">
             </div>
             <div class="col-12">
-              <label for="inputAddress2" class="form-label">Read On </label>
-              <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              <label for="dateInp" class="form-label">Read On </label>
+              <input type="date" name = "bDate" class="form-control" id="dateInp" placeholder="Apartment, studio, or floor">
             </div>
             <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
+              <label for="descrip" class="form-label">Description of the book</label>
+              <textarea  type="text" class="form-control" name = "bDesc" id="descrip"> </textarea>
             </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
+           
+            
+            
             <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
 
