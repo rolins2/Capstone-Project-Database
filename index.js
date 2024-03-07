@@ -46,8 +46,17 @@ app.post("/addBooks",async (req,res)=>{
     //    // console.log(response);
     
     //     console.log("this is the result "+result);
+
+        const bookName = req.body.bName;
+        const bookIsbnn = req.body.bIsbn;
+        const bookRating = req.body.bRating;
+        const bookDate = req.body.bDate;
+        const bookDescrip = req.body.bDesc;
+
+        
+
     try{
-            let res = db.query("INSERT INTO bookrec (title,isbn,rating, readdate,reviews) VALUES ")
+            let res = db.query("INSERT INTO bookrec (title,isbn,rating, readdate,reviews) VALUES  ($1,$2, $3 ,$4 , $5)"[bookName , bookIsbnn , bookRating , bookDate ,bookDescrip]);
     }catch{
 
     }
