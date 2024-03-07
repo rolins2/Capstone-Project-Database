@@ -38,19 +38,23 @@ app.post("/addBooks",async (req,res)=>{
     console.log(req.body);
 
 
-    try{
-        const response = await  axios.get("https://covers.openlibrary.org/b/isbn/0385472579-S.jpg");
+ 
+    //     const response = await  axios.get("https://covers.openlibrary.org/b/isbn/0385472579-S.jpg");
 
-        const result = response.data;
+    //     const result = response.data;
         
-       // console.log(response);
+    //    // console.log(response);
     
-        console.log("this is the result "+result);
+    //     console.log("this is the result "+result);
+    try{
+            let res = db.query("INSERT INTO bookrec (title,isbn,rating, readdate,reviews) VALUES ")
+    }catch{
 
-    }catch(err){
-            console.log("Error hit ");
     }
 
+
+
+   
    
 
 
