@@ -34,8 +34,28 @@ db.connect();
 //F6F1EE white
 
 
-app.post("/addBooks",(req,res)=>{
+app.post("/addBooks",async (req,res)=>{
     console.log(req.body);
+
+
+    try{
+        const response = await  axios.get("https://covers.openlibrary.org/b/isbn/0385472579-S.jpg");
+
+        const result = response.data;
+        
+       // console.log(response);
+    
+        console.log("this is the result "+result);
+
+    }catch(err){
+            console.log("Error hit ");
+    }
+
+   
+
+
+
+
 })
 
 app.get("/addBook", (req,res)=>{
