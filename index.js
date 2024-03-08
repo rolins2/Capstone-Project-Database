@@ -56,16 +56,15 @@ app.post("/addBooks",async (req,res)=>{
         
 
     try{
-            let res = db.query("INSERT INTO bookrec (title,isbn,rating, readdate,reviews) VALUES  ($1,$2, $3 ,$4 , $5)"[bookName , bookIsbnn , bookRating , bookDate ,bookDescrip]);
-    }catch{
+            let res = db.query("INSERT INTO books (title,isbn, rating, readdate, reviews) VALUES($1,$2, $3 ,$4 , $5)  RETURNING *" ,[bookName , bookIsbnn , bookRating , bookDate ,bookDescrip]);
+
+    }catch(err){
+        console.log("Error "+err);
+        res.render("addBook.ejs");
+
 
     }
-
-
-
-   
-   
-
+    res.redirect("/");
 
 
 
