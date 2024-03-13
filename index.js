@@ -37,16 +37,6 @@ db.connect();
 app.post("/addBooks",async (req,res)=>{
     console.log(req.body);
 
-
- 
-    //     const response = await  axios.get("https://covers.openlibrary.org/b/isbn/0385472579-S.jpg");
-
-    //     const result = response.data;
-        
-    //    // console.log(response);
-    
-    //     console.log("this is the result "+result);
-
         const bookName = req.body.bName;
         const bookIsbnn = req.body.bIsbn;
         const bookRating = req.body.bRating;
@@ -68,6 +58,17 @@ app.post("/addBooks",async (req,res)=>{
 
 
 
+})
+
+app.get("/edit",(req,res)=>{
+
+    console.log(req.body);
+})
+
+
+app.get("/delete",(req,res)=>{
+
+    console.log("delete button hit");
 })
 
 app.get("/addBook", (req,res)=>{
