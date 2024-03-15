@@ -60,9 +60,18 @@ app.post("/addBooks",async (req,res)=>{
 
 })
 
-app.get("/edit",(req,res)=>{
+app.get("/edit",async (req,res)=>{
 
-    console.log(req.body);
+    console.log(req.query.bname);
+    let bookName = req.query.bname;
+
+    try{
+        let result  =  await db.query("SELECT * FROM books WHERE title = $1",[bookName]);
+        
+
+    }catch(err){
+        console.log(" Error in databse "+err);
+    }
 })
 
 
