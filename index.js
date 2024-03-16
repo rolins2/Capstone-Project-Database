@@ -8,6 +8,7 @@ app.use(express.static("public"));
 
 
 const port = 3000;
+let edit_id = 0;
 
 const booksz = [ {title: "Atomic habits", isbn_code : 87555 ,dte : new Date("2022-05-25"), rating: 5,urls : "https://covers.openlibrary.org/b/isbn/0385472579-S.jpg"}  ,
 {title: "The Subtle art of not giving a fuck", isbn_code : 87555 ,dte : new Date("2024-05-25"), rating: 7, urls : "https://covers.openlibrary.org/b/isbn/0735211299-S.jpg"},
@@ -64,6 +65,8 @@ app.get("/edit",async (req,res)=>{
 
     //console.log(req.query.bname);
     let bookName = req.query.bname;
+
+    edit_id = bookName;
     let items = [];
 
 
@@ -73,13 +76,13 @@ app.get("/edit",async (req,res)=>{
 
         console.log("result rows "+result.rows);
 
-        console.log(bookName);
+        // console.log(bookName);
 
         result.rows.forEach((ct)=>{items.push(ct)});
 
-        console.log(book1);
+       // console.log(book1);
 
-        console.log(items);
+      //  console.log("the date is "+items[0].readdate);
         
 
     }catch(err){
@@ -87,6 +90,11 @@ app.get("/edit",async (req,res)=>{
     }
 
     res.render("edit.ejs",{items});
+})
+
+
+app.post("/updBooks",async(req,res)=>{
+    console.log("teh id is ",edit_id)
 })
 
 
