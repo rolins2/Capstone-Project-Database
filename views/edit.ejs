@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs'); -%>
+
+
+    <h2> This page is to edit a book   </h2>
+
+    <h3> huh <%= items[0].title %></h3>
+
+    <h3> huh <%= items[0].isbn %></h3>
+
+    <div class = "container">
+
+        <form class="row g-3" method="post" action = "/addBooks">
+            <div class="col-md-6">
+              <label for="inputBName" class="form-label">Book Name</label>
+              <input type="text" class="form-control" id="inputBName" name = "bName" value = "<%= items[0].title %>" required>
+            </div>
+            <div class="col-md-6">
+              <label for="isbnNum" class="form-label">ISBN 10 Number</label>
+              <input type="number" class="form-control" name = "bIsbn" id="isbnNum" minlength="10"  maxlength="10" value = "<%= items[0].isbn %>">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Ratings Out Of 5</label>
+              <input type="number" name = "bRating" class="form-control" id="inputRating" placeholder="Rate from 1 - 5 "  min="1" max="5" value = "<%= items[0].rating %>">
+            </div>
+            <div class="col-12">
+              <label for="dateInp" class="form-label">Read On </label>
+              <input type="date" name = "bDate" class="form-control" id="dateInp" placeholder="Apartment, studio, or floor" value = "<%= items[0].readdate %>">
+            </div>
+            <div class="col-md-6">
+              <label for="descrip" class="form-label">Description of the book</label>
+              <textarea  type="text" class="form-control" name = "bDesc" id="descrip" value = "<%= items[0].reviews %>"> </textarea>
+            </div>
+           
+            
+            
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+    </div>
+    
+</body>
+</html>

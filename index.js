@@ -62,16 +62,31 @@ app.post("/addBooks",async (req,res)=>{
 
 app.get("/edit",async (req,res)=>{
 
-    console.log(req.query.bname);
+    //console.log(req.query.bname);
     let bookName = req.query.bname;
+    let items = [];
+
 
     try{
-        let result  =  await db.query("SELECT * FROM books WHERE title = $1",[bookName]);
+        let result  =  await db.query("SELECT * FROM books WHERE id = $1",[bookName]);
+        let book1 = result.rows[0];
+
+        console.log("result rows "+result.rows);
+
+        console.log(bookName);
+
+        result.rows.forEach((ct)=>{items.push(ct)});
+
+        console.log(book1);
+
+        console.log(items);
         
 
     }catch(err){
         console.log(" Error in databse "+err);
     }
+
+    res.render("edit.ejs",{items});
 })
 
 
