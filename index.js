@@ -94,13 +94,43 @@ app.get("/edit",async (req,res)=>{
 
 
 app.post("/updBooks",async(req,res)=>{
-    console.log("teh id is ",edit_id)
+   
+
+    const bookName = req.body.bName;
+    const bookIsbnn = req.body.bIsbn;
+    const bookRating = req.body.bRating;
+    const bookDate = req.body.bDate;
+    const bookDescrip = req.body.bDesc;
+
+
+
+    try{
+        let result = db.query("UPDATE books SET title = ($1), isbn  =($2), rating = ($3), readdate = ($4), reviews = ($5) WHERE id = $6 RETURNING * ",[bookName,bookIsbnn,bookRating,bookDate,bookDescrip,edit_id ]);
+        res.redirect("/");
+    }catch(err){
+        console.log("Error in the query "+err);
+        res.redirect("/");
+    }
+
 })
 
 
-app.get("/delete",(req,res)=>{
+app.get("/delete",async(req,res)=>{
 
-    console.log("delete button hit");
+    let bookid = req.query.bid;
+
+    console.log("delete button hit "+bookid);
+
+    try{
+        let result = db.query("DELETE FROM books WHERE id = $1",[bookid]);
+        res.redirect("/");
+
+    }catch(err){
+        console.log("Error in deleting data base ");
+    }
+
+
+
 })
 
 app.get("/addBook", (req,res)=>{
