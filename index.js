@@ -114,6 +114,88 @@ app.post("/updBooks",async(req,res)=>{
 
 })
 
+app.post("/filterbooks",async(req,res)=>{
+
+    console.log(req.body);
+
+    let choice = req.body.dateFilter;
+
+    console.log("The filter is "+choice);
+    let books = [];
+
+    switch(choice){
+        case 'sFilter':
+            res.redirect("/");
+            break;
+        case 'recent':
+            try{
+                let result =  await db.query("SELECT * FROM books ORDER BY readdate DESC ");
+                books = result.rows;
+                res.render("index.ejs",{books});
+
+
+
+            }catch(err){
+                console.log("Error in the db");
+                res.redirect("/");
+
+            }
+            break;
+        case 'oldest':
+            try{
+                let result =  await db.query("SELECT * FROM books ORDER BY readdate ASC ");
+                books = result.rows;
+                res.render("index.ejs",{books});
+
+
+
+            }catch(err){
+                console.log("Error in the db");
+                res.redirect("/");
+
+            }
+            break;
+            
+
+        case "highest":
+            try{
+                let result =  await db.query("SELECT * FROM books ORDER BY rating DESC ");
+                books = result.rows;
+                res.render("index.ejs",{books});
+
+
+
+            }catch(err){
+                console.log("Error in the db");
+                res.redirect("/");
+
+            }
+            break;
+
+            case "lowest":
+                try{
+                    let result =  await db.query("SELECT * FROM books ORDER BY rating ASC ");
+                    books = result.rows;
+                    res.render("index.ejs",{books});
+    
+    
+    
+                }catch(err){
+                    console.log("Error in the db");
+                    res.redirect("/");
+    
+                }
+                break;
+            
+
+
+
+
+    }
+
+
+
+})
 
 app.get("/delete",async(req,res)=>{
 

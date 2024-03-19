@@ -2,6 +2,24 @@
 
 
       <h2>Here's a list of books I've read so far </h2>
+
+      <form action = "/filterbooks" id="filterForm" method = "POST">
+        <label for="Filter">Filter by Date:</label>
+        <select id="Filter" name="dateFilter">
+          <option value="sFilter">Select Filter</option>
+
+          <option value="recent">Most Recent</option>
+          <option value="oldest">Oldest</option>
+          <option value="highest">Highest Rating</option>
+          <option value="lowest">Lowest Rating</option>
+
+          <!-- You can add more options for different date filters if needed -->
+        </select>
+      
+       
+      
+        <button type="submit">Apply Filters</button>
+      </form>
       
       <div class="container">
         <ul>
