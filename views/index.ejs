@@ -1,25 +1,53 @@
 <%- include('partials/header.ejs'); -%>
 
 
-      <h2>Here's a list of books I've read so far </h2>
+      <div class = "d-flex justify-content-center p-4">
 
-      <form action = "/filterbooks" id="filterForm" method = "POST">
-        <label for="Filter">Filter by Date:</label>
-        <select id="Filter" name="dateFilter">
-          <option value="sFilter">Select Filter</option>
+        <i>         <h2 class="highlighted-text">Here's a list of books I've read so far </h2>
+        </i>
 
-          <option value="recent">Most Recent</option>
-          <option value="oldest">Oldest</option>
-          <option value="highest">Highest Rating</option>
-          <option value="lowest">Lowest Rating</option>
 
-          <!-- You can add more options for different date filters if needed -->
-        </select>
+
+
+      </div>
+      <div class = "flr">
+        <div >
+
+          <form action = "/filterbooks" id="filterForm" method = "POST">
+
+            <div class = "form-group">
+
+              <label for="Filter">Filter </label>
+              <select class="form-control" id="Filter" name="dateFilter">
+                <option value="sFilter">Select Filter</option>
       
+                <option value="recent">Most Recent</option>
+                <option value="oldest">Oldest</option>
+                <option value="highest">Highest Rating</option>
+                <option value="lowest">Lowest Rating</option>
+      
+                <!-- You can add more options for different date filters if needed -->
+              </select>
+
+
+            </div>
+           
+          
+
+        </div>
        
-      
-        <button type="submit">Apply Filters</button>
-      </form>
+         
+
+          <button class = "btn btn-primary " type="submit">Apply Filters</button>
+
+
+    
+        </form>
+
+      </div>
+
+
+     
       
       <div class="container">
         <ul>
@@ -38,7 +66,7 @@
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
-                        <h2 class="card-title"><%= books[i].title %> </h2>
+                        <h2 class="card-title highlighted-text"><%= books[i].title %> </h2>
                         <p class="card-text"><small class="text-body-secondary">Read On <%= books[i].readdate %> </small></p>
 
                         <p class="card-text"><%= books[i].reviews %></p>

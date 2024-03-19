@@ -1,0 +1,94 @@
+
+
+
+
+.ct{
+    background-color : #ED7D31 ;
+}
+.vt{
+    background-color:#F6F1EE ;
+}
+
+.gt{
+    background-color: #6C5F5B;
+    color: #ff6600;
+    
+}
+
+.highlighted-text {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .highlighted-text::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjust this value to control the position of the line */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Adjust this value to control the thickness of the line */
+    background-color: #ED7D31 ; /* Adjust this value to change the color of the line */
+  }
+  
+  .flr{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+  }
+
+
+
+
+  /* Style the form container */
+#filterForm {
+    display: inline-block;
+  }
+  
+  /* Style the label */
+  #filterForm label {
+    margin-right: 10px;
+  }
+  
+  /* Style the select dropdown */
+  #Filter {
+    padding: 7px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #495057;
+    font-size: 18px;
+  }
+  
+  /* Style the dropdown arrow */
+  #Filter::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  /* Style the dropdown options */
+  #Filter option {
+    background-color: #fff;
+    color: #495057;
+  }
+  
+  /* Style the button */
+  #filterForm button {
+    padding: 7px 20px;
+    margin : 10px;
+  }
+
+  
+  /* Style the button on hover */
+  #filterForm button:hover {
+    background-color: #ED7D31;
+    border-color: #ff6600;
+  }
+  
+  /* Style the button when focused */
+  #filterForm button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(237, 125, 49, 0);
+  }
+  
